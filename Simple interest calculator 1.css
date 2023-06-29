@@ -1,0 +1,29 @@
+
+body {background-color:black;font-family:arial;color:white;
+      }
+h1{color:gray;font-family:verdana;
+   text-align:center;}
+.maindiv {
+    background-color:white;
+    color:black;
+    width:350px;
+    padding:20px;
+    border-radius:15px;
+}
+label {font-size:20px;}
+.p {margin-bottom:20px;
+   padding:20px;
+   width:300px;
+   border-radius:15px;}
+ .input {border:none;
+        border-bottom:solid 2px;
+        padding:3px 8px 0 8px;
+        margin-bottom:10px;)
+.center{
+    width:100px;
+    padding:20px;
+    margin-left:26px;
+  }
+ @media screen and (max-width:700px) {
+ 	.maindiv {width:400px;}
+ }
