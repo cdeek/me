@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <style>
+      main {
+        text-align: center;
+        width:70%;
+        border-radius: 10px;
+        border:solid 1px red;
+        background:white;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1 id="author">author</h1>
+      <p id="text">text</p>
+      <button onclick="getquote()">Get a new qoute</button>
+   </main>
+
+   <script>
+  
+     let colors = [
+      'red',
+      'blue',
+      'green',
+      'black',
+      'orange',
+      'purple',
+      'navy',
+      'lightblue',
+      'brown'
+     ]
+     let text = document.getElementById("text").value;
+     let author = document.getElementById("author").value;
+
+    function getquote() {
+      fetch("https://api.quotable.io/random")
+       .then((res) => {
+         return res.json()
+       })
+       .then((data) => {
+         text.innerHTML = data.content
+         author.innerHTML = data.author
+         console.log(data)
+       })
+       .catch((Error) => {
+         console.log("having error fetching data")
+       })
+      
+       let random = Math.floor(Math.random() * 9)
+      
+       document.querySelector('body').setAttribute("style", `background-color:${colors[random]};`)
+  }
+</script>
+  </body>
+</html>
