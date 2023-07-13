@@ -49,12 +49,12 @@
         </legend>
       <h3>A full stack developer</h3>
       <p>
-        hkyd;klpljgghiooopiiio9ppp
-        gk;0yup[pygk[9tgk'lpuressfk
-        dyuopp,vresm;;0tdn;[[[yddryik
-        fdsfhp;,ngrrdk[pyddcm.;'yfdvm,;
-        xdhkyk;.l;..[orscm;.ndryoirdvklue
-        ddblpfl[mctrblpyippp'lgrdxnl7rd
+        Highly skilled Full stack software developer with expertise in 
+        HTML, CSS, JavaScript, Node.js and Express, React.js 
+        React.js, Native and Python. I am passionate about creating efficient
+        and user-friendly applications. With a strong back-end development,
+        I excel at disigning and implementing responsive and scalable solutions.
+        I am a quick learner , dedicated team player , and have a keen eye for detail.
       </p>
       </fieldset>
     </section>
@@ -66,11 +66,12 @@
     <section id="skills-section" class="skills">
 
       <h2 class="section-header">These are my skills</h2>
-      <p class="skills-list">html and css</p>
-      <p class="skills-list">javascript, react</p>
+      <p class="skills-list">HTML and CSS</p>
+      <p class="skills-list">JavaScript</p>
+      <p class="skills-list">React.js and React Nayive</p>
       <p class="skills-list">developing cloud native</p>
-      <p class="skills-list">cloud computing</p>
-      <p class="skills-list">nodejs and express</p>
+      <p class="skills-list">Node.js and Express</p>
+      <p class="skills-list">Python</p>
 
     </section>
 
@@ -134,14 +135,15 @@
   </div>
   
     <div class="card">
-  <img src="htmlcssjavascript.png" style="width:100%">
+  <img src="htmlcssjs.png" style="width:100%">
   <div class="container">
     <a>Html, Css and javaScript</a>
   </div>
   </div>
 
-      <img src="gitandgithub.png" style="width:100%">
-  <div class="container">
+  <div class="card">
+    <img src="gitandgithub.png" style="width:100%">
+    <div class="container">
     <a>Git and Github</a>
   </div>
   </div>
@@ -153,7 +155,7 @@
   </div>
   </div>
   
-        </div>
+</div>
         <div id="freecodecamp" class="tabcontent">
           
             <div class="card">
@@ -243,7 +245,7 @@
         
         <textarea placeholder="Input your message..." required></textarea>
         
-        <button type="submit">
+        <button onclick="notsend()" type="submit">
           Send<i class="fa fa-paper-plane"></i>
           </button>
       </form>
@@ -267,6 +269,10 @@
 
     <!-- START SCRIPT -->
    <script>
+     
+    const notsend = () =>{
+      alert("message not send")
+    }
 
     function cert(evt, plartform) {
     tabcontent = document.getElementsByClassName("tabcontent");
