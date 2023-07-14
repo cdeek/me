@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      main {
+        height:200px;
+        padding: 10px;
+        text-align: center;
+        width:70%;
+        border-radius: 10px;
+        border: none;
+        background:white;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: auto;
+        margin-top: 25%;
+      }
+     
+      a {
+        
+        text-decoration: none;
+        color:navy;
+      }
+      button {
+        background-color: lightgreen;
+        padding: 10px;
+        border-radius: 10px;
+        border:none;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  </head>
+  <body>
+    <main id="quote-box">
+      <h3>
+        <i class="fas fa-quote-left"></i>
+        <span id="text"></span>
+        <i class="fas fa-quote-right"></i>
+      </h3>
+      <h4 id="author">author</h4>
+      <a href="twitter.com/intent/tweet" id="tweet-quote" target="_blank">
+        Tweet
+        <i class="fab fa-twitter"></i>
+      </a>
+      <button id="new-quote" onclick="getQuote()">Get a new qoute</button>
+    </main>
+
+   <script>
+
+    window.onload = ()=>{getQuote()}
+  
+     let colors = [
+      'red',
+      'blue',
+      'green',
+      'black',
+      'orange',
+      'purple',
+      'navy',
+      'lightblue',
+      'brown',
+      'gray',
+      'yellow'
+     ]
+     let text = document.getElementById("text")
+     let author = document.getElementById("author")
+
+    function getQuote() {
+      fetch("https://api.quotable.io/random")
+       .then((res) => {
+         return res.json()
+       })
+       .then((data) => {
+          text.textContent = data.content;
+          author.textContent = `Author: ${data.author}`;
+        //  console.log(data)
+       })
+       .catch((err) => {
+         console.error("having error fetching data")
+       })
+      
+       let random = Math.floor(Math.random() * 11)
+      
+       document.querySelector('body').setAttribute("style", `background-color:${colors[random]};`)
+  }
+</script>
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</html>
