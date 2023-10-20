@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Drum Machine</title>
+  <style>
+    body {
+      background-color: #404040;
+      color: white;
+      text-align: center;
+    }
+    main {
+      margin-top: 13vh;
+      display: flex;
+      justify-content: center;
+    }
+    #display {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-items: center;
+    }
+    .drum-pad {
+      width: 120px;
+      height: 120px;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="margin-top: 20vh;">Drum Machine</h1>
+  <main id="drum-machine">
+    <div id="display"></div>
+  </main>
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  <script>
+    let dsp = document.getElementById('display');
+    let txt = document.querySelector('h3');
+    let codes = "81 87 69 82 83 68 90 88 67";
+    const drums = [{
+      keyCode: 81,
+      src: "https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3",
+      key: "Q"
+    },
+      {
+        keyCode: 87,
+        src: "https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3",
+        key: "W"
+      },
+      {
+        keyCode: 69,
+        src: "https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3",
+        key: "E"
+      },
+      {
+        keyCode: 82,
+        src: "https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3",
+        key: "A"
+      },
+      {
+        keyCode: 83,
+        src: "https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3",
+        key: "S"
+      },
+      {
+        keyCode: 68,
+        src: "https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3",
+        key: "D"
+      },
+      {
+        keyCode: 90,
+        src: "https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3",
+        key: "Z"
+      },
+      {
+        keyCode: 88,
+        src: "https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3",
+        key: "X"
+      },
+      {
+        keyCode: 67,
+        src: "https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3",
+        key: "C"
+      }];
+    dsp.innerHTML = drums.map((drum) => (
+      `<button onclick="player(${drum.keyCode})" class="drum-pad" id="${drum.key}">
+      ${drum.key}
+      <audio class="clip" id="${drum.keyCode}">
+      <source src="${drum.src}" type="audio/m4a">
+      </audio>
+      </button>`
+    )).join("");
+    //   console.log(dsp.innerHTML)
+    const player = (id) => {
+      const audio = document.getElementById(id);
+      audio.play();
+      console.log(audio)
+    };
+    document.addEventListener('keypress', (e) => {
+      const key = e.keyCode;
+      if (codes.includes(key)) {
+        player(key)
+      } else {
+        return null
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Markdown Previewer</title>
+    <style>
+      body {
+        background-color: #9292f5;
+        color:#423d3d;
+      }
+      h1 {
+        text-align: center;
+      }
+      textarea {
+        resize: vertical;
+        outline: none;
+        margin-left: 10%;
+        width: 70%;
+        height: 200px;
+        padding: 20px;
+        border-radius: 16px;
+        background-color: #eafaf8af;
+      }
+      .preview {
+        overflow: auto;
+        max-height: 600px;
+        background-color: white;
+        width: 95%;
+        border-radius: 10px;
+        margin: auto;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>MARKDOWN PREVIEWER</h1>
+    <textarea id="editor">
+# h1
+## h2
+### h3
+Heres some code, `code`, 
+
+```
+function anotherExample(firstLine, lastLine) {
+  if (firstLine == '```' && lastLine == '```') {
+    return multiLineCode;
+  }
+}
+```
+  
+**bold**.
+_italic_.
+**_both!_**
+~~crossing~~.
+
+[links](https://www.freecodecamp.com), and
+> Block Quotes!
+
+
+ Header | Header | Header?
+------------ | ------------- | ------------- 
+ content | content | content
+ content | content
+
+- lists.
+  - Some .
+     - hello.
+        - ooh
+
+
+1. And there are numbererd lists too.
+1. Use just 1s if you want! 
+1. But the list goes on...
+- Even if you use dashes or asterisks.
+* And last but not least, let's not forget embedded images:
+
+![google Logo w/ Text](https://googl.com/)
+    </textarea>
+    <div class="preview" id="preview"></div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.1/marked.min.js"></script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <script>
+      let ed = document.getElementById('editor');
+      let pv = document.getElementById('preview');
+      pv.innerHTML = marked.parse(ed.value);
+      ed.addEventListener('input', (e) => {
+      const value = e.target.value;
+      const result = marked.parse(value);
+      pv.innerHTML = result;
+      });
+    </script>
+  </body>
+</html>
