@@ -15,7 +15,7 @@
       flex-wrap: wrap;
     }
     .row {
-      overflow-x: auto;
+      overflow-X: auto;
       flex: 100%;
       height: 120px;
       background-color: white;
@@ -117,6 +117,9 @@
       display.style.color = "darkgray";
       answer.textContent = ""
     }
+    document.addEventListner('keypress', (e) => {
+      display.textCntent += e.key;
+    })
   </script>
 </body>
 </html>
