@@ -119,9 +119,14 @@
       display.style.color = "darkgray";
       answer.textContent = ""
     }
-    document.addEventListner('keypress', (e) => {
-      display.textCntent += e.key;
-    })
+    document.addEventListener('keypress', (e) => {
+     const keyCodes = "49 50 51 52 53 54 55 56 57 48 45 43 47 46 42";
+     if (keyCodes.includes(e.keyCode)) {
+       return display.textContent += e.key;
+     } else {
+        return null;
+       }
+    });
   </script>
 </body>
 </html>
