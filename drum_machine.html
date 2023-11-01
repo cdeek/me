@@ -22,84 +22,73 @@
       width: 120px;
       height: 120px;
     }
+    button:hover {
+      background-color: gray;
+    }
   </style>
 </head>
 <body>
   <h1 style="margin-top: 20vh;">Drum Machine</h1>
   <main id="drum-machine">
-    <div id="display"></div>
+    <div id="display">
+      <button onclick="player('Q')" class="drum-pad">
+        Q
+        <audio src="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3" class="clip" id="Q"></audio>
+      </button>
+      <button onclick="player('W')" class="drum-pad">
+        W
+        <audio src="https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3" class="clip" id="W"></audio>
+      </button>
+      <button onclick="player('E')" class="drum-pad">
+        E
+        <audio src="https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3" class="clip" id="E"></audio>
+      </button>
+      <button onclick="player('A')" class="drum-pad">
+        A
+        <audio src="https://s3.amazonaws.com/freecodecamp/drums/Heater-4.mp3" class="clip" id="A"></audio>
+      </button>
+      <button onclick="player('S)" class="drum-pad">
+        S
+        <audio src="https://s3.amazonaws.com/freecodecamp/drums/Heater-5.mp3" class="clip" id="S"></audio>
+      </button>
+      <button onclick="player('D')" class="drum-pad">
+        D
+        <audio src="https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3" class="clip" id="D"></audio>
+      </button>
+      <button onclick="player('Z')" class="drum-pad">
+        Z
+        <audio src="https://s3.amazonaws.com/freecodecamp/drums/Heater-7.mp3" class="clip" id="Z"></audio>
+      </button>
+      <button onclick="player('X')" class="drum-pad">
+        X
+        <audio src="https://s3.amazonaws.com/freecodecamp/drums/Heater-8.mp3" class="clip" id="X"></audio>
+      </button>
+      <button onclick="player('C')" class="drum-pad">
+        C
+        <audio src="https://s3.amazonaws.com/freecodecamp/drums/Heater-9.mp3" class="clip" id="C"></audio>
+      </button>
+    </div>
   </main>
   <script>
-    let dsp = document.getElementById('display');
-    let txt = document.querySelector('h3');
-    let codes = "81 87 69 82 83 68 90 88 67";
-    const drums = [{
-      keyCode: 81,
-      src: "https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3",
-      key: "Q"
-    },
-      {
-        keyCode: 87,
-        src: "https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3",
-        key: "W"
-      },
-      {
-        keyCode: 69,
-        src: "https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3",
-        key: "E"
-      },
-      {
-        keyCode: 82,
-        src: "https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3",
-        key: "A"
-      },
-      {
-        keyCode: 83,
-        src: "https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3",
-        key: "S"
-      },
-      {
-        keyCode: 68,
-        src: "https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3",
-        key: "D"
-      },
-      {
-        keyCode: 90,
-        src: "https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3",
-        key: "Z"
-      },
-      {
-        keyCode: 88,
-        src: "https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3",
-        key: "X"
-      },
-      {
-        keyCode: 67,
-        src: "https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3",
-        key: "C"
-      }];
-    dsp.innerHTML = drums.map((drum) => (
-      `<button onclick="player(${drum.keyCode})" class="drum-pad" id="${drum.key}">
-      ${drum.key}
-      <audio class="clip" id="${drum.keyCode}">
-      <source src="${drum.src}" type="audio/m4a">
-      </audio>
-      </button>`
-    )).join("");
-    //   console.log(dsp.innerHTML)
     const player = (id) => {
       const audio = document.getElementById(id);
       audio.play();
-      console.log(audio)
     };
     document.addEventListener('keypress', (e) => {
-      const key = e.keyCode;
-      if (codes.includes(key)) {
-        player(key)
+      const keyCodes = "81 87 69 82 83 68 90 88 67 133 119 101 97 115 100 122 120 99";
+      const key = e.key.toUpperCase();
+      if (keyCodes.includes(e.keyCode)) {
+        return player(key)
       } else {
         return null
       }
     });
   </script>
 </body>
+<!-- dsp.innerHTML = drums.map((drum) => (
+            `<button onclick="player(${drum.key})" class="drum-pad" id="${drum.keyCode}">
+            ${drum.key}
+            <audio src="${drum.src}" class="clip" id="${drum.key}"></audio>
+            </button>`
+            )).join(""); -->
 </html>
