@@ -78,7 +78,7 @@ fieldset{
 }
 
 /* ABOUT SECTION */
-.experience p:nth-child(1) {
+.experience p {
   padding: 5px;
   border: solid 1px #ccc;
   animation: movedown 0.3s;
