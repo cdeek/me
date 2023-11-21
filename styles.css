@@ -81,7 +81,7 @@ fieldset{
 .experience p:nth-child(1) {
   padding: 5px;
   border: solid 1px #ccc;
-  animation: movedown 0.3s infinite;
+  animation: movedown 0.3s;
 }
 @keyframes movedown {
   0% { transform: translateY(-100px); }
@@ -90,7 +90,7 @@ fieldset{
 .experience p:nth-child(2) {
   padding: 5px;
   border: solid 1px #ccc;
-  animation: moveup 0.3s infinite;
+  animation: moveup 0.3s;
 }
 @keyframes moveup {
   0% { transform: translateY(100px); }
