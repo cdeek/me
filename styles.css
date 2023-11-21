@@ -62,12 +62,8 @@ display: flex;
 .welcome-text h1{
   font-size: 50px;
   margin: 250px auto;
-  animation: moveup 1s infinite;
 }
-@keyframes moveup {
-  0% { transform: translateY(-50px); }
-  100% { transform: translateY(0px); }
-}
+
 
 .welcome-text img {
   border:solid 1px #ccc;
@@ -79,6 +75,26 @@ fieldset{
   opacity: 0.6;
   box-shadow: 10px 26px 20px 0 rgba(0,0,0,0.2);
   max-width: 80%;
+}
+
+/* ABOUT SECTION */
+.experience p:nth-child(1) {
+  padding: 5px;
+  border: solid 1px #ccc;
+  animation: movedown 0.3s infinite;
+}
+@keyframes movedown {
+  0% { transform: translateY(-100px); }
+  100% { transform: translateY(0px); }
+}
+.experience p:nth-child(2) {
+  padding: 5px;
+  border: solid 1px #ccc;
+  animation: moveup 0.3s infinite;
+}
+@keyframes moveup {
+  0% { transform: translateY(100px); }
+  100% { transform: translateY(0px); }
 }
 
 /* SKILLS SECTION */
