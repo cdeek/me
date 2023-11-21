@@ -62,7 +62,15 @@ display: flex;
 .welcome-text h1{
   font-size: 50px;
   margin: 250px auto;
+  display: inline-block;
+  animation: moveup 1s infinite;
 }
+@keyframes moveup {
+  0% { transform: translateY(-50px); }
+  20% { transform: translateY(0px); }
+  50% { transform: translateY(0px); }
+}
+
 .welcome-text img {
   border:solid 1px #ccc;
   border-radius:50%;
