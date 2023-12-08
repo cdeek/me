@@ -2,10 +2,20 @@
 <html>
 <head>
   <title>Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
       background-color: navy;
     }
+    .back-btn {
+      z-index: 99;
+      font-size: 50px;
+      margin: 20px 5px;
+      border: none;
+      color: lightgray;
+      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      background: transparent;
+     }
     main {
       margin: 0px auto;
       width: 400px;
@@ -63,6 +73,7 @@
   </style>
 </head>
 <body>
+ <button onclick="goBack()" class="back-btn" href="index.html">←</button>
   <main>
     <div class="row">
       <span id="display"></span>
@@ -92,6 +103,10 @@
   </main>
   <h3>Made by cdeek</h3>
   <script>
+  const goBack = () => {
+     history.back()
+    };
+    
     let display = document.getElementById('display');
     let answer = document.getElementById('result');
     display.textContent = 0;

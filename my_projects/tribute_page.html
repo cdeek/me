@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Tribute Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 <style type="text/css">
 body {background-color:lightgray;
 padding:10px;}
@@ -15,9 +16,26 @@ ul{margin: 40px;
 text-align:left;}
 #tribute-info {text-align:justify;}
 a:hover {color:red;}
+
+     .back-btn {
+      position: fixed;
+      z-index: 99;
+      font-size: 50px;
+      margin: 10px;
+      border: none;
+      color: gray;
+      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      background: transparent;
+     }
 </style>
+<script>
+ const goBack = () => {
+     history.back()
+    };
+</script>
 </head>
 <body>
+ <button onclick="goBack()" class="back-btn" href="index.html">←</button>
 <main id="main">
 <header>
 <h1 id="title">MAGNUS CARLSEN</h1>
@@ -25,7 +43,7 @@ a:hover {color:red;}
 </header>
 <figure id="img-div">
 <img id="image"
-src="https://en.m.wikipedia.org/wiki/File:World_Chess_Championship_2021,_game_07,_Magnus_Carlsen_(cropped).jpg" alt="Carlsen at
+src="Magnus_Carlsen.jpg" alt="Carlsen at
 the FIDE World Fischer Random Chess Championship 2019">
 <figcaption id="img-caption">Carlsen at the FIDE World Fischer Random Chess
 Championship 2019</figcaption>

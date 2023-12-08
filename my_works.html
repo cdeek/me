@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      My works
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+     body {
+      background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+     }
+     
+     .back-btn {
+      position: fixed;
+      z-index: 99;
+      font-size: 50px;
+      margin: 10px;
+      border: none;
+      color: lightgray;
+      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      background: transparent;
+     }
+     
+     h1 {
+      text-align: center;
+      margin-bottom: 100px;
+      color: gray;
+     }
+     
+     a {text-decoration: none;
+        color: gray;
+        text-align: center;
+      }
+     
+     .projects-grid {
+       display: grid;
+       max-width: 700px;
+       grid-template-columns: 1fr 1fr 1fr;
+       grid-gap: 10px;
+       margin: 30px auto;
+      }
+      
+      @media screen and (max-width: 600px) {
+      .projects-grid {
+       grid-template-columns: 1fr 1fr;
+       }
+      }
+     
+     .project {
+       width: 200px;
+       box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+       border-radius: 5px;
+     }
+     
+     .project-image {
+       width: 100%;
+       height: 300px;
+     }
+    </style>
+  </head>
+  <body>
+    <button onclick="goBack()" class="back-btn" href="index.html">←</button>
+    <h1>Explore Some of my works</h1>
+    <main>
+     <div id="works" class="projects-grid"></div>
+    </main>
+    <footer>
+     
+    </footer>
+    <script>
+    const goBack = () => {
+     history.back()
+    };
+
+    const projects = [
+      {image: 'work_images/calculator.png', title: 'Calculator', link: 'my_projects/javaScript_calculator.html'},
+      {image: 'work_images/quote_machine.png', title: 'Quote Machine', link: 'my_projects/quote_machine.html'},
+      {image: 'work_images/drum_machine.png', title: 'Drum Machine', link: 'my_projects/drum_machine.html'},
+      {image: 'work_images/form.png', title: 'Form', link: 'my_projects/form.html'},
+      {image: 'work_images/tribute_page.png', title: 'Tribute Page', link: 'my_projects/form.html'},
+      {image: 'work_images/landing_page.png', title: 'Landing Page', link: 'my_projects/landing_page.html'},
+      {image: 'work_images/technical_documentation.png', title: 'Technical Documentation', link: 'my_projects/technical_documentation.html'},
+      {image: 'work_images/simple_interest_calculator.png', title: 'Simple Interest calculator', link: 'my_projects/simple_interest_calculator.html'}
+    ];
+    
+    const works = document.getElementById('works');
+    
+    works.innerHTML = projects.map(c => (
+     `
+       <a href="${c.link}" target="_blank" class="project">
+         <img class="project-image" src="${c.image}" alt="project"/>
+         <span>${c.title}</span>
+       </a>
+     `
+    )).join("");
+    </script>
+  </body>
+</html>

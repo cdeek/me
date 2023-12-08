@@ -2,11 +2,20 @@
 <html>
   <head>
     <title>Markdown Previewer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
       body {
         background-color: #9292f5;
         color:#423d3d;
       }
+      .back-btn {
+      font-size: 50px;
+      margin: 10px;
+      border: none;
+      color: lightgray;
+      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      background: transparent;
+     }
       h1 {
         text-align: center;
       }
@@ -32,6 +41,7 @@
     </style>
   </head>
   <body>
+   <button onclick="goBack()" class="back-btn" href="index.html">←</button>
     <h1>MARKDOWN PREVIEWER</h1>
     <textarea id="editor">
 # h1
@@ -79,6 +89,10 @@ _italic_.
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.1/marked.min.js"></script>
     <script>
+    const goBack = () => {
+     history.back()
+    };
+    
       let ed = document.getElementById('editor');
       let pv = document.getElementById('preview');
       pv.innerHTML = marked.parse(ed.value);
