@@ -184,6 +184,7 @@ fieldset{
   .tab button {
     background-color: navy;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
@@ -204,8 +205,8 @@ fieldset{
   
   @media screen and (max-width: 600px) {
     .tab button{
-      padding:8px;
-      font-size: 12px;
+      padding:16px 8px;
+      font-size: 14px;
     }
   }
   
