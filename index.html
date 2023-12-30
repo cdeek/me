@@ -43,7 +43,7 @@
 
      <section id="welcome" class="welcome-text">
       <h1>Hey I am<br> ABUBAKAR SADIQ</h1>
-      <fieldset>
+      <fieldset id="intro">
         <legend>
       <img src="1.png" alt="profile" />
         </legend>
@@ -58,7 +58,6 @@
       </p>
       </fieldset>
     </section>
-
     <!-- END WELCOME SECTION -->
 
     <!-- START SKILLS SECTION -->
@@ -226,8 +225,16 @@
 
     <!-- START SCRIPT -->
    <script>
-     let showYear = document.getElementById('year');
-     showYear.textContent = new Date().getFullYear();
+   window.setTimeout(() => {
+    let intro = document.getElementById('intro');
+    intro.scrollIntoView({
+     behavior: "smooth",
+     block: "start"
+    });
+   }, 1000);
+   
+   let showYear = document.getElementById('year');
+   showYear.textContent = new Date().getFullYear();
      
    const courseraCourses = [
     { image: 'certificates_images/node.png', title: 'Node.js and Express', link: 'https//couresera.com' },

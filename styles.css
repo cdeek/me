@@ -1,6 +1,8 @@
 /* base */
 
 body {
+  scroll-behavior: smooth;
+  transition: scroll-behavior 0.8s;
   text-align: center;
   margin: 0;
   padding: 0;
@@ -71,7 +73,7 @@ a {text-decoration: none;
   border-radius:50%;
 }
 fieldset{
-  margin:20px auto;
+  margin: 20px auto;
   background: #181719;
   opacity: 0.6;
   box-shadow: 10px 26px 20px 0 rgba(0,0,0,0.2);
